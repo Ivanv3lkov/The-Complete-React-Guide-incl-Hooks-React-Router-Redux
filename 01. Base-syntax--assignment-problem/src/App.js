@@ -1,14 +1,19 @@
 import React, { Component } from 'react'
 import './App.css';
-import UserInput from './UserInput/UserInput'
-import UserOutput from './UserOutput/UserOutput'
+import UserInput from './components/UserInput'
+import UserOutput from './components/UserOutput'
 
 class App extends Component {
-  state = {
-    username: 'Bill Gates'
+  constructor() {
+    super()
+    this.state = {
+      username: 'Bill Gates'
+    }
+    
+    this.userNameChangeHandler = this.userNameChangeHandler.bind(this)
   }
-
-  userNameChangeHandler = (event) => {
+  
+  userNameChangeHandler(event) {
     this.setState({username: event.target.value})
   }
   

@@ -1,7 +1,7 @@
 .UserOutput {
-    width: 60%;
+    margin: 1em 0 0 7em;
     padding: 16px;
-    margin: 16px;
+    width: 60%;
     border: 2px solid black;
     background-color: #ccc;
     text-align: center;
