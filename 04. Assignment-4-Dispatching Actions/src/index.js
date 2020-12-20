@@ -16,8 +16,7 @@ const rootReducer = combineReducers({
     res: resultReducer
 });
 
- //  If we want to use DevTools, we should apply below code.
-
+   //  If we want to use DevTools, we should apply below code.
 // const logger = store => {
 //     return next => {
 //         return action => {
@@ -31,7 +30,7 @@ const rootReducer = combineReducers({
 
 // const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-// const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk, logger));
+// const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk, logger)));
 
 const store = createStore(rootReducer, applyMiddleware(thunk, logger));
 

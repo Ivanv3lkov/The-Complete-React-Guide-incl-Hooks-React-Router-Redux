@@ -1,7 +1,6 @@
 import * as actionTypes from './actionTypes';
 
 const saveResult = (res) => {
-    // const updatedResult = res * 2;
     return {
         type: actionTypes.STORE_RESULT,
         result: res
@@ -9,12 +8,10 @@ const saveResult = (res) => {
 }
 
 export const storeResult = (res) => {
-    return (dispatch, getState) => {
+    return (dispatch) => {
         setTimeout(() => {
-            // const oldCounter = getState().ctr.counter;
-            // console.log(oldCounter);
             dispatch(saveResult(res));
-        }, 2000)
+        }, 3000)
     }
 };
 
@@ -24,3 +21,14 @@ export const deleteResult = (resElId) => {
         resultElId: resElId
     };
 };
+
+
+// export const getData = () => {
+//     return (dispatch) => {
+//        return fetch('http://localhost:8000/data')
+//             .then(res => res.json())
+//             .then(data => {
+//                 dispatch({ type: 'GOT_DATA', data })
+//             })
+//     }
+// }
