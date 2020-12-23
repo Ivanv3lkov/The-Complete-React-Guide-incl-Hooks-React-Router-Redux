@@ -1,7 +1,7 @@
 import React from 'react'
 import './UserInput.css'
 
-const UserInput = (props) => {
+const UserInput = props => {
     return  <input
     className='UserInput'
     type="text" 
