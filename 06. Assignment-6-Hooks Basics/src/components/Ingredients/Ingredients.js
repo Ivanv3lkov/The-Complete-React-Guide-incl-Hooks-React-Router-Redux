@@ -8,10 +8,17 @@ const Ingredients = () => {
   const [userIngredients, setUserIngredients] = useState([]);
 
   const addIngredientHandler = ingredient => {
-    setUserIngredients(prevIngredients => [
-      ...prevIngredients,
-      { id: Math.random().toString(), ...ingredient }
-    ]);
+    fetch('https://hooks-practice-a8f14-default-rtdb.firebaseio.com/ingredients.json', {
+      method: 'POST',
+      body: JSON.stringify(ingredient),
+      headers: { 'Content-type': 'application/json' }
+    }).then(response => response.json())
+      .then(responseData => {
+        setUserIngredients(prevIngredients => [
+          ...prevIngredients,
+          { id: responseData.name, ...ingredient }
+        ]);
+      })
   };
 
   const removeIngredientHandler = ingredientId => {
